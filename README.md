@@ -6,7 +6,7 @@ A minimal REST API built using [Gin](https://github.com/gin-gonic/gin), [GORM](h
 
 ## 📌 Notes
 - This project is meant for university course learning project.
-- It runs fully offline using SQLite.
+- It runs fully offline using SQLite though it should be installed from [SQLite3](https://www.sqlite.org/index.html).
 - due to sqlite3 driver needing gcc it only runs on unix systems with gcc installed
 
 ---
