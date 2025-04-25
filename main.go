@@ -12,5 +12,9 @@ func Hi(c *gin.Context) {
 func main() {
 	router := gin.Default()
 	router.GET("/", Hi)
+	router.GET("/tasks", getTasks)
+	router.POST("/tasks", createTasks)
+	router.PUT("/tasks/:id", updateTasks)
+	router.DELETE("/tasks/:id", deleteTasks)
 	router.Run("localhost:3001")
 }
