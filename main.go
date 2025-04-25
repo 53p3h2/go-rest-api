@@ -11,6 +11,12 @@ func Hi(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, "hi")
 }
 
+type Task struct {
+	ID     uint   `json:"id" gorm:"primaryKey"`
+	Text   string `json:"text"`
+	Status bool   `json:"status"`
+}
+
 func main() {
 	router := gin.Default()
 	router.GET("/", Hi)
