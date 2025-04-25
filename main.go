@@ -17,7 +17,19 @@ type Task struct {
 	Status bool   `json:"status"`
 }
 
+var db *gorm.DB
+
+func initDB() {
+	var err error
+	db, err = gorm.Open(sqlite.Open("tasks.db"), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect to database")
+	}
+	db.AutoMigrate(&Task{})
+}
+
 func main() {
+	initDB()
 	router := gin.Default()
 	router.GET("/", Hi)
 	router.GET("/tasks", getTasks)
